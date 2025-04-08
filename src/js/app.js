@@ -1,8 +1,8 @@
 import { GridGame } from "./game";
 
-window.addEventListener('DOMContentLoaded', () => {
-  let gameGridWrapper = document.querySelector('.grid__wrapper');
+window.addEventListener("DOMContentLoaded", () => {
+  let gameGridWrapper = document.querySelector(".grid__wrapper");
   window.game = new GridGame(gameGridWrapper);
-  game.generateGrid();
-  game.startGame();
-})
+  window.game.generateGrid();
+  window.game.startGame();
+});

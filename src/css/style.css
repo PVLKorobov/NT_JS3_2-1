@@ -1,3 +1,25 @@
 body {
     color: #999;
 }
+
+.contents__wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.grid__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    height: 800px;
+    padding: 20px;
+}
+
+.grid__slot {
+    display: flex;
+    justify-content: center;
+    background-color: #999;
+    border-radius: 100px;
+    width: 200px;
+    height: 200px;
+}

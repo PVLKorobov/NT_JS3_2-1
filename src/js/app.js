@@ -1,11 +1,12 @@
-// TODO: write code here
+import { GridGame } from "./game";
 
-// comment this to pass build
-const unusedVariable = "variable";
+window.addEventListener('DOMContentLoaded', () => {
+  let gameGridWrapper = document.querySelector('.grid__wrapper');
+  window.game = new GridGame(gameGridWrapper);
+  game.generateGrid();
+  game.startGame();
+})
 
-// for demonstration purpose only
-export default function demo(value) {
-  return `Demo: ${value}`;
-}
+
 
 console.log("app.js included");

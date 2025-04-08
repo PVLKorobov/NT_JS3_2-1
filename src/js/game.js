@@ -15,28 +15,27 @@ class GridGame {
             for (let y = 0; y < 4; y++) {
                 const gridSlot = document.createElement('div');
                 gridSlot.setAttribute('class', `grid__slot grid__slot__${x}-${y}`);
-                this.gameGridWrapper.append(gridSlot);
+                document.querySelector('.grid__wrapper').appendChild(gridSlot);
             }
         }
     }
 
     rollRandomPosition () {
         let newPos = {x: Math.floor(Math.random() * 4), y: Math.floor(Math.random() * 4)};
-        console.log(newPos.x, newPos.y);
-        // while (this.currentPos.x != newPos.x || this.currentPos.y != newPos.y) {
-        //     newPos = {x: Math.floor(Math.random() * 4), y: Math.floor(Math.random() * 4)};
-        // }
-        this.currentPos = newPos;
+        if (newPos === this.currentPos) {
+            this.rollRandomPosition();
+        }
+        else {
+            this.currentPos = newPos;
+        }
     }
 
     moveImgToCurrentPos () {
-        console.log(`moving target to [${this.currentPos.x} ${this.currentPos.y}]`);
         const targetSlot = this.gameGridWrapper.querySelector(`.grid__slot__${this.currentPos.x}-${this.currentPos.y}`);
         targetSlot.appendChild(this.targetElement)
     }
 
     startGame () {
-        console.log('game started')
         this.gameCycleInterval = setInterval(() => {
             this.rollRandomPosition();
             this.moveImgToCurrentPos();
@@ -45,6 +44,7 @@ class GridGame {
 
     stopGame () {
         clearInterval(this.gameCycleInterval);
+        this.gameCycleInterval = null;
     }
 }
 

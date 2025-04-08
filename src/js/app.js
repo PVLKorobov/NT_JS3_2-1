@@ -6,7 +6,3 @@ window.addEventListener('DOMContentLoaded', () => {
   game.generateGrid();
   game.startGame();
 })
-
-
-
-console.log("app.js included");

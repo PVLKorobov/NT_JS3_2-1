@@ -28,7 +28,7 @@ class GridGame {
       x: Math.floor(Math.random() * 4),
       y: Math.floor(Math.random() * 4),
     };
-    if (newPos === this.currentPos) {
+    if (newPos.x == this.currentPos.x && newPos.y == this.currentPos.y) {
       this.rollRandomPosition();
     } else {
       this.currentPos = newPos;
